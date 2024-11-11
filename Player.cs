@@ -12,12 +12,13 @@ public class Player {
     int playerPower;
     PlayerInventory playerInventory;
 
-
+    // Private constructor, diakses melalui metode Instance()
     private Player() {
-        playerInventory = new PlayerInventory();
+        playerInventory = PlayerInventory.Instance();
         playerName = null;
     }
 
+    // Implementasi singleton pada class Player
     public static Player Instance() {
         if (instance == null) {
             return new Player();
@@ -26,5 +27,5 @@ public class Player {
         }
     }
 
-
+    
 }
