@@ -66,6 +66,82 @@ public class UI
     {
         //digunakan untuk menampilkan menu pembuatan karakter baru
         //plot:
-        //latar cerita : seorang pangeran dari suatu 
+        //latar cerita : seorang pangeran dari suatu kerajaann yang sangat makmur dan damai, namun suatu hari 
+        //kerajaan tersebut diserang oleh makhluk bernama "Honkai", kerajaan hancur lebur, dan merekea harus mengirimkan
+        //pangeran tersebut ke luar angkasa, namun naas pesawat yang membawa 
+        Console.Clear();
+        Console.WriteLine("Apakah anda yakin ingin memulai permainan baru?");
+        Console.WriteLine("Y/N");
+        if(Console.ReadLine().ToLower() != "y")
+        {
+            return null;
+        }
+        Console.WriteLine("Petualangan anda akan segera dimulai");
+        //digunakan sebagai pause sampai user mengetikkan apapun
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Nikmatilah petualangan ini!");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Kamu dibangunkan oleh sebuah cahaya terang...");
+        Console.ReadKey();
+        Console.WriteLine("Badanmu terasa dingin, dan nafasmu terasa sesak");
+        Console.ReadKey();
+        Console.WriteLine("\"Aduhhhh....\" rintihmu sambil mencoba mendirikan badanmu")
+        Console.ReadKey();
+        Console.WriteLine("Tetapi rasanya seperti ada gajah yang menimpamu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("...");
+        Console.ReadKey();
+        Console.WriteLine("...");
+        Console.ReadKey();
+        Console.WriteLine("...");   
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Pikiranmu kosong, seperti menderita demensia");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Apa mungkin kamu memang terkena demensia?");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Hal itu tidak penting, karena kamu masih ingat ajaran mengenai suatu hal")''
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Hal yang paling penting untuk dilakukan saat kamu kehilangan pijakanmu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Cari informasi mengenai sekitarmu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("..."); 
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Kamu merogoh kantongmu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Tertemu sebuah kartu berdebu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("*Sapu sapu sapu*");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Terlihatlah namamu");
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("..."); 
+        Console.ReadKey();
+        Console.Clear();
+        Console.WriteLine("Namaku adalah...");
+        Console.ReadKey();
+        Console.Clear();
+        string tempName = Console.ReadLine("Masukkan nama karaktermu: ");
+        Console.WriteLine("Apakah anda yakin ingin menggunakan nama" + tempName + "? (nama tidak dapat diubah)");
+        Console.WriteLine("Y/N");
+        if(Console.ReadLine().ToLower() == "y")
+        {
+            player.playerName = tempName;
+        }
+        //TERAPIN WHILE LOOP, GW NGANTUK CIK
     }
 }
