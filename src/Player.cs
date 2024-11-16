@@ -2,7 +2,7 @@ using System;
 
 // Player hanya akan memiliki 1 instance saja
 // Class tidak akan diinherit oleh class lain apapun
-public class Player {
+public class Player : Entity {
     public static Player instance = null;
 
     // Base stat untuk player;
