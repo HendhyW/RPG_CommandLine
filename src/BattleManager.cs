@@ -7,12 +7,13 @@ public class BattleManager {
   //constructor
 
   //methods
-  public void startBattle() {
+  public void startBattleMain() {
     // Kode untuk memulai pertarungan
     // Menampilkan battle UI
-    int choice = UI.Instance().showBattleUI();
+    int choice;
     do
     {
+      choice = UI.Instance().ShowBattleUI();
       switch (choice)
       {
         case 1:

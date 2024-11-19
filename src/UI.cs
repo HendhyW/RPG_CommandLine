@@ -64,6 +64,7 @@ public class UI
 
     public static string ShowStartNewGame()
     {
+        bool name_confirmation = false;
         //digunakan untuk menampilkan menu pembuatan karakter baru
         //plot:
         //latar cerita : seorang pangeran dari suatu kerajaann yang sangat makmur dan damai, namun suatu hari 
@@ -101,25 +102,20 @@ public class UI
         Console.Clear();
         Console.WriteLine("Pikiranmu kosong, seperti menderita demensia");
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("Apa mungkin kamu memang terkena demensia?");
         Console.ReadKey();
         Console.Clear();
         Console.WriteLine("Hal itu tidak penting, karena kamu masih ingat ajaran mengenai suatu hal")''
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("Hal yang paling penting untuk dilakukan saat kamu kehilangan pijakanmu");
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("Cari informasi mengenai sekitarmu");
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("..."); 
         Console.ReadKey();
         Console.Clear();
         Console.WriteLine("Kamu merogoh kantongmu");
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("Tertemu sebuah kartu berdebu");
         Console.ReadKey();
         Console.Clear();
@@ -128,20 +124,32 @@ public class UI
         Console.Clear();
         Console.WriteLine("Terlihatlah namamu");
         Console.ReadKey();
-        Console.Clear();
         Console.WriteLine("..."); 
         Console.ReadKey();
         Console.Clear();
         Console.WriteLine("Namaku adalah...");
         Console.ReadKey();
         Console.Clear();
-        string tempName = Console.ReadLine("Masukkan nama karaktermu: ");
-        Console.WriteLine("Apakah anda yakin ingin menggunakan nama" + tempName + "? (nama tidak dapat diubah)");
-        Console.WriteLine("Y/N");
-        if(Console.ReadLine().ToLower() == "y")
+        while(name_confirmation == false)
         {
-            player.playerName = tempName;
+            string tempName = Console.ReadLine("Masukkan nama karaktermu: ");
+            Console.WriteLine("Lihat lebih dekat ...")
+            Console.WriteLine("Apakah kamu yakin namamu adalah" + tempName + "? (nama tidak dapat diubah)");
+            Console.WriteLine("Y/N");
+            if(Console.ReadLine().ToLower() == "y")
+            {
+                player.playerName = tempName;
+                name_confirmation = true;
+            }
         }
-        //TERAPIN WHILE LOOP, GW NGANTUK CIK
+        //ini mau lanjut milih class apa gimana cik?
+    }
+
+    public static void ShowBattleUIMain(Player player, Enemy enemy)
+    {
+        //1 buat basic attack
+        //2 buat skill
+        // 3 buat inventory 
+        //4 buat coba escape 
     }
 }

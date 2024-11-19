@@ -5,6 +5,8 @@ using System;
 public class Player : Entity {
     public static Player instance = null;
 
+    //TAMBAHIN SKILL COK
+    
     // Base stat untuk player;
     string playerName;
     int playerHealth;
