@@ -10,17 +10,15 @@ public class Player : Entity {
     // Base stat khusus untuk player;
     private string playerName;
     private int playerLevel;
-    private int playerPower;
-    private 
+    private int breakEffect;
     PlayerInventory playerInventory;
 
     // Private constructor, diakses melalui metode Instance()
-    private Player(string playerName, int playerLevel, int playerPower, int health, int baseATK, int baseDef, int speed, StatusEffect statusEffect) : base(health, baseDef, baseATK, speed, statusEffect) {
+    private Player(string playerName, int playerLevel, int breakEffect, int health, int baseATK, int baseDef, int speed, StatusEffect statusEffect) : base(health, baseDef, baseATK, speed, statusEffect) {
         this.playerName = playerName;
+        this.breakEffect = breakEffect;
         this.playerLevel = playerLevel;
-        this.playerPower = playerPower;
         playerInventory = PlayerInventory.Instance();
-        
     }
 
     // Implementasi singleton pada class Player
@@ -46,17 +44,18 @@ public class Player : Entity {
     public void setPlayerLevel(int input) {
         playerLevel = input;
     }
-    public int getPlayerPower() {
-        return playerPower;
+    public int getBreakEffect() {
+        return breakEffect;
     }
-    public void setPlayerPower(int input) {
-        playerPower = input;
+    public void setBreakEffect(int input) {
+        breakEffect = input;
     }
 
-    public void ShowStats() {
-        // Console.WriteLine("Player Name: " + playerName);
-        // Console.WriteLine("Player Health: " + );
-        // Console.WriteLine("Player Level: " + playerLevel);
-        // Console.WriteLine("Player Power: " + playerPower);
+    public new void printStats()
+    {
+        Console.WriteLine("Player Name: " + playerName);
+        Console.WriteLine("Player Level: " + playerLevel);
+        base.printStats();
+        Console.WriteLine("Break Effect: " + breakEffect);
     }
 }

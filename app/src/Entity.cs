@@ -46,7 +46,8 @@ public class Entity {
     }
 
     // Method untuk print status
-    public void printStats() {
+    public void printStats() 
+    {
         Console.WriteLine("Health: " + health);
         Console.WriteLine("Defense: " + baseDef);
         Console.WriteLine("Attack: " + baseATK);
