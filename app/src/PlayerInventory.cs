@@ -48,9 +48,9 @@ sealed public class PlayerInventory {
     // Reset isi dari item
     // Warning!! Semua item di items bakal di replace sama input
     public void setAll(Dictionary<Items, int> input) {
-        items.Clear()
-        foreach(Dictionary<items, int> item in items) {
-            item.add(input);
+        items.Clear();
+        foreach(KeyValuePair<Items, int> item in items) {
+            item.Add(input);
         }
     }
 }

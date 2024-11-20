@@ -3,9 +3,8 @@ using System.IO;
 
 public class SaveManager {
     public static void Save(int select) {
-        player = Player.Instance();
         using (StreamReader sr = File.OpenText("save"+select+".txt")) {
-            // stats player
+            // stats Player.Instance()
             sr.WriteLine("Player:");
             sr.WriteLine(playe.getPlayerName());
             sr.WriteLine(playe.getPlayerLevel());
@@ -24,17 +23,16 @@ public class SaveManager {
     }
 
     public static void Load(int select) {
-        player = Player.Instance();
         using (StreamReader sr = File.OpenText("save"+select+".txt")) {
-            // stats player using (StreamReader sr = File.OpenText(path))
-            player.setPlayerName(sr.ReadLine());
-            player.setPlayerLevel(sr.ReadLine());
-            player.setPlayerPower(sr.ReadLine());
-            player.setHealth(sr.ReadLine());
-            player.setDef(sr.ReadLine());
-            player.setBaseATK(sr.ReadLine());
-            player.setSpeed(sr.ReadLine());
-            player.setStatusEffect(sr.ReadLine());
+            // stats Player.Instance() using (StreamReader sr = File.OpenText(path))
+            Player.Instance().setPlayerName(sr.ReadLine());
+            Player.Instance().setPlayerLevel(sr.ReadLine());
+            Player.Instance().setPlayerPower(sr.ReadLine());
+            Player.Instance().setHealth(sr.ReadLine());
+            Player.Instance().setDef(sr.ReadLine());
+            Player.Instance().setBaseATK(sr.ReadLine());
+            Player.Instance().setSpeed(sr.ReadLine());
+            Player.Instance().setStatusEffect(sr.ReadLine());
         }
     }
 }
