@@ -1,19 +1,27 @@
 using System;
 public class Entity {
     private int health; // Nyawa dari entity
+    private int maxHealth; // Nyawa maksimum dari entity
     private int baseDef; // Stats defense dasar dari entity
     private int baseATK; // Stats attack dasar dari entity
     private int speed; // stats speed untuk penentuan giliran
-    private StatusEffect statusEffect; // status effect yang diterima entity
+    private StatusEffect? statusEffect; // status effect yang diterima entity
     // Constructor untuk entity
-    public Entity(int health, int baseDef, int baseATK, int speed, StatusEffect statusEffect) {
-        this.health = health;
+    public Entity(int maxHealth, int baseDef, int baseATK, int speed, StatusEffect? statusEffect) {
+        this.maxHealth = maxHealth;
+        this.health = maxHealth;
         this.baseDef = baseDef;
         this.baseATK = baseATK;
         this.speed = speed;
         this.statusEffect = statusEffect;
     }
     // method-method untuk mengakses dan mengubah atribut-atribut di atas
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+    public void setMaxHealth(int input) {
+        maxHealth = input;
+    }
     public int getHealth() {
         return health;
     }
@@ -38,7 +46,7 @@ public class Entity {
     public void setSpeed(int input) {
         speed = input;
     }
-    public StatusEffect getStatusEffect() {
+    public StatusEffect? getStatusEffect() {
         return statusEffect;
     }
     public void setStatusEffect(StatusEffect input) {

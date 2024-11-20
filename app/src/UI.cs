@@ -59,6 +59,7 @@ public class UI
     {
         //digunakan untuk menampilkan battle UI
         // show stat player, show stat enemy, show skill, show inventory, show run
+        
         Console.WriteLine("1. Basic Attack");
         Console.WriteLine("2. Skill");
         Console.WriteLine("3. Show Enemy Status");
