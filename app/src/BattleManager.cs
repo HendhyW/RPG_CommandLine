@@ -10,7 +10,7 @@ public class BattleManager {
   public void startBattle() {
     // Kode untuk memulai pertarungan
     // Menampilkan battle UI
-    int choice = UI.Instance().showBattleUI();
+    int choice = UI.showBattleUI();
     do
     {
       switch (choice)
@@ -22,20 +22,23 @@ public class BattleManager {
           // Skill, mengurangi HP musuh sesuai dengan damage dari skill yang dipilih
           break;
         case 3:
-          // Access Inventory, menampilkan inventory player
+          // Menampilkan Status dari musuh
           break;
         case 4:
+          // Access Inventory, menampilkan inventory player
+          break;
+        case 5:
           // Run, player mencoba untuk lari dari pertarungan
           break;
         default:
           break;
       }
     }
-    while(choice != 4 && Player.Instance().getHealth() > 0 && Enemy.Instance().enemyHealth > 0);
+    while(choice != 4 && Player.Instance().getHealth() > 0 );
 
     if (Player.Instance().getHealth() <= 0) {
       // Jika player mati, maka game over
-      UI.Instance().showGameOver();
+      UI.showGameOver();
     } else {
       // Jika musuh mati, maka player mendapatkan EXP dan item
       // Player akan mendapatkan Exp, dan kemungkinan item dari musuh

@@ -38,7 +38,7 @@ public class UI
         Console.WriteLine(" 4. Credits");
         Console.WriteLine(" 5. Keluar");
         Console.Write("Pilihan: ");
-        string choice = Console.ReadLine();
+        string? choice = Console.ReadLine();
         int int_choice;
         Int32.TryParse(choice, out int_choice);
         return int_choice;
@@ -53,6 +53,31 @@ public class UI
         Console.WriteLine("2. Maxwell Zefanya Ginting (2306221200)");
         Console.WriteLine("3. Naufal Hadi Rasikhin (2306231366)");
         Console.WriteLine("Terima kasih telah memainkan game ini!");
+    }
+
+    public static int showBattleUI()
+    {
+        //digunakan untuk menampilkan battle UI
+        // show stat player, show stat enemy, show skill, show inventory, show run
+        Console.WriteLine("1. Basic Attack");
+        Console.WriteLine("2. Skill");
+        Console.WriteLine("3. Show Enemy Status");
+        Console.WriteLine("4. Access Inventory");
+        Console.WriteLine("5. Run");
+        Console.Write("Pilihan: ");
+        string? choice = Console.ReadLine();
+        int int_choice;
+        Int32.TryParse(choice, out int_choice);
+        return int_choice;
+    }
+
+    public static void showGameOver()
+    {
+        //digunakan untuk menampilkan game over
+        Console.WriteLine("Game Over");
+        Console.WriteLine("Kamu telah mati");
+        Console.WriteLine("Kamu akan kembali ke main menu");
+        // kembali ke main menu atau save point klo udah ada
     }
 
     public static void ExitGame()
@@ -71,10 +96,9 @@ public class UI
         //pangeran tersebut ke luar angkasa, namun naas pesawat yang membawa 
         Console.Clear();
         Console.WriteLine("Apakah anda yakin ingin memulai permainan baru?");
-        Console.WriteLine("Y/N");
-        if(Console.ReadLine().ToLower() != "y")
+        if(!confirm())
         {
-            return;
+            return; //kembali ke main menu
         }
         Console.WriteLine("Petualangan anda akan segera dimulai");
         //digunakan sebagai pause sampai user mengetikkan apapun
@@ -135,7 +159,54 @@ public class UI
         Console.WriteLine("Namaku adalah...");
         Console.ReadKey();
         Console.Clear();
-        Console.WriteLine("Masukkan nama karaktermu: ");
+        nameConfirm();
+        // Console.WriteLine("Masukkan nama karaktermu: ");
+        // string? tempName = Console.ReadLine();
+        
+        // do
+        // {
+        //     if(tempName == null)
+        //     {
+        //         Console.WriteLine("Nama tidak boleh kosong");
+        //     }
+        // }while(tempName == null);
+        
+        
+        // Console.WriteLine("Apakah anda yakin ingin menggunakan nama" + tempName + "? (nama tidak dapat diubah)");
+        // Console.WriteLine("Y/N");
+        // if(Console.ReadLine().ToLower() == "y")
+        // {
+        //     Player.Instance().setPlayerName(tempName);
+        // }
+        //TERAPIN WHILE LOOP, GW NGANTUK CIK
+    }
+
+    private static Boolean confirm()
+    {
+        Console.WriteLine("Y/N");
+        string? choice; 
+        do
+        {
+            choice = Console.ReadLine();
+            if (choice == null || choice.ToLower() != "y" && choice.ToLower() != "n")
+            {
+                Console.WriteLine("Pilihan tidak valid");
+            }
+            
+        }while(choice == null || choice.ToLower() != "y" && choice.ToLower() != "n");
+        if (choice.ToLower() == "y")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private static void nameConfirm()
+    {
+        Console.Clear();
         string? tempName = Console.ReadLine();
         do
         {
@@ -145,13 +216,15 @@ public class UI
             }
         }while(tempName == null);
         
-        
         Console.WriteLine("Apakah anda yakin ingin menggunakan nama" + tempName + "? (nama tidak dapat diubah)");
-        Console.WriteLine("Y/N");
-        if(Console.ReadLine().ToLower() == "y")
+        if(confirm())
         {
             Player.Instance().setPlayerName(tempName);
         }
-        //TERAPIN WHILE LOOP, GW NGANTUK CIK
+        else
+        {
+            Console.WriteLine("Masukkan nama karaktermu: ");
+            nameConfirm();
+        }
     }
 }
