@@ -1,0 +1,4 @@
+public enum Element
+{
+    QUANTUM, IMAJINER, TRANSCENDENTAL, PHYSICAL
+}
