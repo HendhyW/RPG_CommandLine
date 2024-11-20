@@ -14,6 +14,7 @@ sealed public class PlayerInventory {
         capacity = 0;
         items = new Dictionary<Items, int>();
     }
+
     public static PlayerInventory Instance() {
         if (instance == null) {
             return new PlayerInventory();
@@ -37,5 +38,19 @@ sealed public class PlayerInventory {
             this.items.Add(items, input);
         }
         refreshCapacity();
+    }
+
+    // Return reference dari "items" yang isinya dictionary
+    public Dictionary<Items, int> getAll() {
+        return items;
+    }
+
+    // Reset isi dari item
+    // Warning!! Semua item di items bakal di replace sama input
+    public void setAll(Dictionary<Items, int> input) {
+        items.Clear()
+        foreach(Dictionary<items, int> item in items) {
+            item.add(input);
+        }
     }
 }
